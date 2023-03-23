@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/edesoft-frontend/static/css/main.355a0853.css",
-    "main.js": "/edesoft-frontend/static/js/main.ee50e8ee.js",
-    "index.html": "/edesoft-frontend/index.html",
-    "main.355a0853.css.map": "/edesoft-frontend/static/css/main.355a0853.css.map",
-    "main.ee50e8ee.js.map": "/edesoft-frontend/static/js/main.ee50e8ee.js.map"
+    "main.css": "/atividade-frontend/static/css/main.355a0853.css",
+    "main.js": "/atividade-frontend/static/js/main.ee50e8ee.js",
+    "index.html": "/atividade-frontend/index.html",
+    "main.355a0853.css.map": "/atividade-frontend/static/css/main.355a0853.css.map",
+    "main.ee50e8ee.js.map": "/atividade-frontend/static/js/main.ee50e8ee.js.map"
   },
   "entrypoints": [
     "static/css/main.355a0853.css",
