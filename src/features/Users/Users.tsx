@@ -5,7 +5,7 @@ export const userSlice = createSlice({
     initialState: [],
     reducers: {
         addUser: (state: object[], action) => {
-            state.push(action.payload.data)
+            state.unshift(action.payload.data)
         },
         getUsers: (state: object[], action) =>{
             const users : object[]= action.payload.data
@@ -18,9 +18,9 @@ export const userSlice = createSlice({
         },
         updateUser: (state : object[], action) => {
             state[action.payload.data.index] = action.payload.data.user;
-        }
+        },
     }
 });
 
-export const { getUsers, deleteUser } = userSlice.actions
+export const { getUsers, deleteUser, addUser } = userSlice.actions
 export default userSlice.reducer

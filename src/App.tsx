@@ -5,7 +5,7 @@ import { ListUser } from './components/ListUser/ListUser';
 import { useSelector } from 'react-redux';
 
 
-interface Data{
+export interface Data{
   id: number;
   email: string;
   username: string;

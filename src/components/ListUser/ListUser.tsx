@@ -10,7 +10,7 @@ export function ListUser(props: ListUserProp) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('https://fakestoreapi.com/users?limit=20')
+            const data = await fetch('https://fakestoreapi.com/users')
                 .then(res => res.json())
                 .catch(e => console.error(e))
             setUser(data)
@@ -41,7 +41,7 @@ export function ListUser(props: ListUserProp) {
                                 <hr/>
                                 <div>
                                     <h6>Address</h6>
-                                    <p>Addess: {`${user.address.street}, ${user.address.number}`}</p>
+                                    <p>Address: {`${user.address.street}, ${user.address.number}`}</p>
                                     <p>City: {user.address.city}</p>
                                     <p>ZipCode: {user.address.zipcode}</p>
                                 </div>

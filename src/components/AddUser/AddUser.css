@@ -6,3 +6,7 @@
     flex-direction: column;
     overflow: scroll;
 }
+
+#addUser{
+    background-color: #58d966;
+}
