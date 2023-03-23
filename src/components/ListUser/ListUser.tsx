@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ListUserProp } from "../../App";
-import { getUsers } from "../../features/Users/Users";
+import { getUsers, deleteUser } from "../../features/Users/Users";
 import './ListUser.css'
 
 export function ListUser(props: ListUserProp) {
@@ -10,8 +10,9 @@ export function ListUser(props: ListUserProp) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('https://fakestoreapi.com/users')
+            const data = await fetch('https://fakestoreapi.com/users?limit=20')
                 .then(res => res.json())
+                .catch(e => console.error(e))
             setUser(data)
         }
         fetchData()
@@ -29,7 +30,7 @@ export function ListUser(props: ListUserProp) {
                 {
                     props.users.map((user) => {
                         return (
-                            <div key={user.id} className="card-user">
+                            <div key={props.users.indexOf(user)} className="card-user">
                                 <div>
                                     <h6>Personal Infos</h6>
                                     <p>Name: {`${user.name.firstname} ${user.name.lastname}`}</p>
@@ -52,6 +53,7 @@ export function ListUser(props: ListUserProp) {
                                     </button>
                                     <button
                                         className="button"
+                                        onClick={() => dispatch(deleteUser({data:props.users.indexOf(user)}))}
                                     >
                                         Delete
                                     </button>
