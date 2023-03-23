@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/edesoft-frontend/static/css/main.bdba3d65.css",
-    "main.js": "/edesoft-frontend/static/js/main.16a70a0c.js",
+    "main.css": "/edesoft-frontend/static/css/main.355a0853.css",
+    "main.js": "/edesoft-frontend/static/js/main.ee50e8ee.js",
     "index.html": "/edesoft-frontend/index.html",
-    "main.bdba3d65.css.map": "/edesoft-frontend/static/css/main.bdba3d65.css.map",
-    "main.16a70a0c.js.map": "/edesoft-frontend/static/js/main.16a70a0c.js.map"
+    "main.355a0853.css.map": "/edesoft-frontend/static/css/main.355a0853.css.map",
+    "main.ee50e8ee.js.map": "/edesoft-frontend/static/js/main.ee50e8ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdba3d65.css",
-    "static/js/main.16a70a0c.js"
+    "static/css/main.355a0853.css",
+    "static/js/main.ee50e8ee.js"
   ]
 }
