@@ -1,0 +1,53 @@
+.card-user {
+    margin: 1rem;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    padding: 1rem;
+    display: flex;
+    min-height: 7rem;
+}
+
+.add-user-card > button{
+    margin-left: 1.2rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 3rem;
+}
+
+.card-user > div{
+    width: 50%;
+}
+
+.card-user-options{
+    display: flex;
+    flex-direction: column;
+    width: 25% !important;
+    justify-content: space-around;
+}
+
+.card-user > div > h6{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0; 
+}
+
+.card-user > div > h6, .card-user > div > p{
+    margin-left: 1rem;
+}
+
+.card-user > div > p:first-child::first-letter{
+    text-transform: capitalize
+}
+
+.button {
+    border-style: none;
+    margin: 0.5rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    background-color: #e9e9ed7d;
+}
+
+.button:hover{
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 1s;
+}

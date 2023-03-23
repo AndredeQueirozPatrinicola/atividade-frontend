@@ -1,27 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ListUserProp } from "../../App";
-import { Data } from "../../FakeData";
 import { getUsers } from "../../features/Users/Users";
+import './ListUser.css'
 
 export function ListUser(props: ListUserProp) {
     const dispatch = useDispatch()
+    const [users, setUser] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetch('https://fakestoreapi.com/users')
+                .then(res => res.json())
+            setUser(data)
+        }
+        fetchData()
+    }, []);
+
     return (
         <div className='add-user-container'>
             <div className="add-user-card">
-                <button onClick={() => {dispatch(getUsers({}))}}>Ola</button>
-            {
-                props.users.map((user: Data) => {
-                    return (
-                        <div key={user.id}>
-                            <p>{user.username}</p>
-                            <p>{user.email}</p>
-                            <p>{user.password}</p>
-                        </div>
-                    )
+                <button
+                    onClick={() => { dispatch(getUsers({ data: users })) }}
+                    className="button"
+                >
+                    Get users
+                </button>
+                {
+                    props.users.map((user) => {
+                        return (
+                            <div key={user.id} className="card-user">
+                                <div>
+                                    <h6>Personal Infos</h6>
+                                    <p>Name: {`${user.name.firstname} ${user.name.lastname}`}</p>
+                                    <p>Username: {user.username}</p>
+                                    <p>E-mail: {user.email}</p>
+                                    <p>Phone : {user.phone}</p>
+                                </div>
+                                <hr/>
+                                <div>
+                                    <h6>Address</h6>
+                                    <p>Addess: {`${user.address.street}, ${user.address.number}`}</p>
+                                    <p>City: {user.address.city}</p>
+                                    <p>ZipCode: {user.address.zipcode}</p>
+                                </div>
+                                <div className="card-user-options">
+                                    <button
+                                        className="button"
+                                    >   
+                                        Update
+                                    </button>
+                                    <button
+                                        className="button"
+                                    >
+                                        Delete
+                                    </button>
 
-                })
-            }
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )
