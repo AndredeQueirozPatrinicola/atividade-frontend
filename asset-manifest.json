@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/edesoft-frontend/static/css/main.bdba3d65.css",
+    "main.js": "/edesoft-frontend/static/js/main.16a70a0c.js",
+    "index.html": "/edesoft-frontend/index.html",
+    "main.bdba3d65.css.map": "/edesoft-frontend/static/css/main.bdba3d65.css.map",
+    "main.16a70a0c.js.map": "/edesoft-frontend/static/js/main.16a70a0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdba3d65.css",
+    "static/js/main.16a70a0c.js"
+  ]
+}
