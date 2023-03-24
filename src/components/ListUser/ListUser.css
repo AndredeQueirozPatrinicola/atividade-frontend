@@ -62,3 +62,21 @@
     cursor: pointer;
     transition: 1s;
 }
+
+@media only screen and (max-width: 1305px) {
+    
+    .card-user{
+        min-height: 20rem;
+    }
+  
+}
+
+@media only screen and (max-width: 755px) {
+    
+    .card-user{
+        flex-direction: column;
+    }
+  
+}
+
+

@@ -13,3 +13,20 @@
   padding: 3rem;
   min-height: 50rem;
 }
+
+@media only screen and (max-width: 1400px) {
+    
+  .app{
+      flex-direction: column;
+  }
+
+  .add-user-container, .user-container{
+    width: 88%;
+  }  
+
+  .add-user-container{
+    min-height: auto;
+  }
+
+}
+
