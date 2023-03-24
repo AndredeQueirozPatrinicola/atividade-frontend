@@ -14,7 +14,11 @@
     min-height: 3rem;
 }
 
-.card-user > div{
+.update-user{
+    min-height: 15rem;
+}
+
+.card-user > div, .card-user > form{
     width: 50%;
 }
 
@@ -29,7 +33,7 @@
     justify-content: space-around;
 }
 
-.card-user > div > h6{
+.card-user > div > h6, .card-user > form > h6{
     font-weight: 600;
     font-size: 20px;
     margin: 0; 
@@ -52,6 +56,11 @@
     background-color: #e9e9ed7d;
 }
 
+.button:first-child{
+    background-color: #58d966;
+    color: #fff;
+}
+
 .button:last-child{
     background-color: rgba(203, 23, 23, 0.719);
     color: #fff;
@@ -61,6 +70,16 @@
     border-radius: 2rem;
     cursor: pointer;
     transition: 1s;
+}
+
+#get-user{
+    background-color: #58b9d9;
+    color: #fff;
+}
+
+#update-user{
+    background-color: #b4b8a6;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 1305px) {

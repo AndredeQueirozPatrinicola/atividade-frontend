@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ListUserProp } from "../../App";
 import { getUsers, deleteUser } from "../../features/Users/Users";
+import { CardUser } from "../CardUser/CardUser";
 import './ListUser.css'
+import { UpdateUser } from "../UpdateUser/UpdateUser";
 
-export function ListUser(props: ListUserProp) {
+export function ListUser(props: any) {
     const dispatch = useDispatch()
     const [users, setUser] = useState([]);
 
@@ -28,39 +30,8 @@ export function ListUser(props: ListUserProp) {
                     Get users
                 </button>
                 {
-                    props.users.map((user) => {
-                        return (
-                            <div key={props.users.indexOf(user)} className="card-user">
-                                <div>
-                                    <h6>Personal Infos</h6>
-                                    <p>Name: {`${user.name.firstname} ${user.name.lastname}`}</p>
-                                    <p>Username: {user.username}</p>
-                                    <p>E-mail: {user.email}</p>
-                                    <p>Phone : {user.phone}</p>
-                                </div>
-                                <hr/>
-                                <div>
-                                    <h6>Address</h6>
-                                    <p>Address: {`${user.address.street}, ${user.address.number}`}</p>
-                                    <p>City: {user.address.city}</p>
-                                    <p>ZipCode: {user.address.zipcode}</p>
-                                </div>
-                                <div className="card-user-options">
-                                    <button
-                                        className="button"
-                                    >   
-                                        Update
-                                    </button>
-                                    <button
-                                        className="button"
-                                        onClick={() => dispatch(deleteUser({data:props.users.indexOf(user)}))}
-                                    >
-                                        Delete
-                                    </button>
-
-                                </div>
-                            </div>
-                        )
+                    props.users.map((user: any) => {
+                        return <CardUser users={users} user={user}/>
                     })
                 }
             </div>
