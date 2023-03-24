@@ -15,7 +15,44 @@ export function UpdateUser(props: any) {
     const [city, setCity] = useState(props.user.address.city);
     const [zipcode, setZipcode] = useState(props.user.address.zipcode);
 
-    
+    const name = {
+        firstname: firstName,
+        lastname: lastName
+    }
+    const fullAdress = {
+        city:city,
+        street:address,
+        number:"",
+        zipcode:zipcode,
+        geolocation : {
+            lat: "",
+            long: ""
+        },
+        phone: phone
+    }
+
+    const handleClickSave = () => {
+        let data = {
+            id: 0,
+            name,
+            email,
+            username,
+            password,
+            phone,
+            address: fullAdress,
+        }
+        dispatch(updateUser({
+            index:props.users.indexOf(props.user),
+            data
+        }))
+        props.handleSave();
+    };
+
+    const handleClickCancel = () => {
+        
+        props.handleSave();
+    };
+
     return (
         <>
             <div>
@@ -114,6 +151,21 @@ export function UpdateUser(props: any) {
                         }}
                     ></input>
                 </p>
+            </div>
+            <div className="card-user-options">
+                <button
+                    className="button"
+                    onClick={handleClickSave}   
+                    id="save"
+                >
+                    Save
+                </button>
+                <button
+                    className="button"
+                    onClick={handleClickCancel}
+                >
+                    Cancel
+                </button>
             </div>
         </>
     )

@@ -7,9 +7,13 @@ import { getUsers, deleteUser } from "../../features/Users/Users";
 export function DisplayUser(props: any) {
     const dispatch = useDispatch()
 
+    const handleClick = () => {
+        props.handleUpdate();
+    };
+
     return (
         <>
-            <div>
+            <div key={props.users.indexOf(props.user)}>
                 <h6>Personal Infos</h6>
                 <p>Name: {`${props.user.name.firstname} ${props.user.name.lastname}`}</p>
                 <p>Username: {props.user.username}</p>
@@ -22,6 +26,24 @@ export function DisplayUser(props: any) {
                 <p>Address: {`${props.user.address.street}, ${props.user.address.number}`}</p>
                 <p>City: {props.user.address.city}</p>
                 <p>ZipCode: {props.user.address.zipcode}</p>
+            </div>
+            <div className="card-user-options">
+
+                <button
+                    className="button"
+                    onClick={handleClick}
+                    id="update-user"
+                >
+                    Update
+                </button>
+                <button
+                    className="button"
+                    onClick={() =>
+                        dispatch(deleteUser({ data: props.users.indexOf(props.user) }))
+                    }
+                >
+                    Delete
+                </button>
             </div>
         </>
     )

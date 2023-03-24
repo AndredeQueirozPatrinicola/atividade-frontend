@@ -9,12 +9,10 @@ export function CardUser(props: any) {
     const dispatch = useDispatch()
     const [editing, setEdit] = useState(false);
     const [updatedUser, setUpdatedUser] = useState(props.user);
-    console.log(updatedUser)
     const classDisplayUpdate = editing ? "card-user update-user" : "card-user"
 
-    const handleSave = () => {
-        dispatch(updateUser(updatedUser));
-        setEdit(false);
+    const handleChangeState = () => {
+        setEdit(!editing);
     }
 
     return (
@@ -23,55 +21,18 @@ export function CardUser(props: any) {
                 editing ? (
                     <UpdateUser
                         user={updatedUser}
+                        users={props.users}
+                        handleSave={handleChangeState}
                         setUpdatedUser={setUpdatedUser}
                     />
                 ) : (
-                    <DisplayUser user={props.user} />
+                    <DisplayUser 
+                        user={props.user}
+                        users={props.users}
+                        handleUpdate={handleChangeState}
+                    />
                 )
             }
-            <div className="card-user-options">
-                {
-                    editing ? (
-                        <>
-                            <button
-                                className="button"
-                                onClick={() => {
-                                    setUpdatedUser(updatedUser);
-                                    handleSave()
-                                }}
-                                id="save"
-                            >
-                                Save
-                            </button>
-                            <button
-                                className="button"
-                                onClick={() => setEdit(false)}
-                            >
-                                Cancel
-                            </button>
-                        </>
-                    ) : (
-                        <>
-                            <button
-                                className="button"
-                                onClick={() => setEdit(true)}
-                                id="update-user"
-                                type="submit"
-                            >
-                                Update
-                            </button>
-                            <button
-                                className="button"
-                                onClick={() =>
-                                    dispatch(deleteUser({ data: props.users.indexOf(props.user) }))
-                                }
-                            >
-                                Delete
-                            </button>
-                        </>
-                    )
-                }
-            </div>
         </div>
     )
 }

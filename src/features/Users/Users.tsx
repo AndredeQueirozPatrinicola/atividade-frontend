@@ -17,8 +17,7 @@ export const userSlice = createSlice({
             state.splice(action.payload.data, 1)
         },
         updateUser: (state : object[], action) => {
-            console.log(action.payload)
-            // state[action.payload.data.index] = action.payload.data.user;
+            state[action.payload.index] = action.payload.data;
         },
     }
 });
